@@ -1,8 +1,7 @@
-package com.udacity.asteroidradar.api
+package com.udacity.asteroidradar.data.api
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
-import com.udacity.asteroidradar.db.DayAsteroidTable
 
 
 @JsonClass(generateAdapter = true)

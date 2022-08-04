@@ -1,11 +1,11 @@
-package com.udacity.asteroidradar.db
+package com.udacity.asteroidradar.data.db
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [AsteroidTable::class,DayAsteroidTable::class], version = 1, exportSchema = false)
+@Database(entities = [AsteroidTable::class, DayAsteroidTable::class], version = 1, exportSchema = false)
 abstract class NASADatabase : RoomDatabase() {
 
     /**

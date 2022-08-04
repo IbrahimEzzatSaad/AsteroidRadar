@@ -1,12 +1,11 @@
-package com.udacity.asteroidradar.db
+package com.udacity.asteroidradar.data.db
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.udacity.asteroidradar.domain.Asteroid
-import com.udacity.asteroidradar.domain.PictureOfDay
+import com.udacity.asteroidradar.data.db.AsteroidTable
+import com.udacity.asteroidradar.data.db.DayAsteroidTable
 
 @Dao
 interface NASADao {

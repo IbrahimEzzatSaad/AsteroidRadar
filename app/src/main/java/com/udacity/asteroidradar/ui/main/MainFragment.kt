@@ -1,17 +1,16 @@
-package com.udacity.asteroidradar.main
+package com.udacity.asteroidradar.ui.main
 
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.udacity.asteroidradar.R
 import com.udacity.asteroidradar.databinding.FragmentMainBinding
-import com.udacity.asteroidradar.domain.Asteroid
-import com.udacity.asteroidradar.domain.PictureOfDay
-import com.udacity.asteroidradar.repository.RequestState
+import com.udacity.asteroidradar.domain.Factory
+import com.udacity.asteroidradar.domain.MainViewModel
+import com.udacity.asteroidradar.utils.RequestState
 
 class MainFragment : Fragment() {
 

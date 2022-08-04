@@ -1,10 +1,8 @@
-package com.udacity.asteroidradar.db
+package com.udacity.asteroidradar.data.db
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.udacity.asteroidradar.domain.PictureOfDay
-import java.util.*
 
 @Entity(tableName = "day_asteroid_table")
 data class DayAsteroidTable(

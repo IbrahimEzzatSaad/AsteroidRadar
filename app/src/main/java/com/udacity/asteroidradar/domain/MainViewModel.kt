@@ -1,16 +1,13 @@
-package com.udacity.asteroidradar.main
+package com.udacity.asteroidradar.domain
 
 import android.app.Application
-import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.*
-import com.udacity.asteroidradar.db.NASADatabase
-import com.udacity.asteroidradar.domain.Asteroid
-import com.udacity.asteroidradar.domain.PictureOfDay
-import com.udacity.asteroidradar.repository.NasaRepository
-import com.udacity.asteroidradar.repository.RequestState
+import com.udacity.asteroidradar.data.db.NASADatabase
+import com.udacity.asteroidradar.model.Asteroid
+import com.udacity.asteroidradar.model.PictureOfDay
+import com.udacity.asteroidradar.data.repository.NasaRepository
+import com.udacity.asteroidradar.utils.RequestState
 import kotlinx.coroutines.launch
-import java.time.Duration
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
 

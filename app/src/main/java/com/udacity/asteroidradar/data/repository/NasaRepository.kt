@@ -1,17 +1,13 @@
-package com.udacity.asteroidradar.repository
+package com.udacity.asteroidradar.data.repository
 
-import android.util.Log
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
-import com.udacity.asteroidradar.api.Network
-import com.udacity.asteroidradar.api.parseAsteroidsJsonResult
-import com.udacity.asteroidradar.db.AsteroidTable
-import com.udacity.asteroidradar.db.NASADatabase
-import com.udacity.asteroidradar.domain.Asteroid
-import com.udacity.asteroidradar.domain.PictureOfDay
+import com.udacity.asteroidradar.data.api.Network
+import com.udacity.asteroidradar.data.api.parseAsteroidsJsonResult
+import com.udacity.asteroidradar.data.db.NASADatabase
+import com.udacity.asteroidradar.model.Asteroid
+import com.udacity.asteroidradar.model.PictureOfDay
 import com.udacity.asteroidradar.model.asDatabaseModel
 import com.udacity.asteroidradar.model.asDomainModel
+import com.udacity.asteroidradar.utils.RequestState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -47,10 +43,10 @@ class NasaRepository(private val database: NASADatabase) {
 
 
 
-            Triple(RequestState.DONE , database.nasaDatabaseDao.getAllAsteroid().asDomainModel(), database.nasaDatabaseDao.getTodayAsteroid().asDomainModel())
+            Triple(RequestState.DONE, database.nasaDatabaseDao.getAllAsteroid().asDomainModel(), database.nasaDatabaseDao.getTodayAsteroid().asDomainModel())
 
         }catch (e : Exception){
-            Triple(RequestState.FAILED , database.nasaDatabaseDao.getAllAsteroid().asDomainModel(), database.nasaDatabaseDao.getTodayAsteroid().asDomainModel())
+            Triple(RequestState.FAILED, database.nasaDatabaseDao.getAllAsteroid().asDomainModel(), database.nasaDatabaseDao.getTodayAsteroid().asDomainModel())
         }
     }
 

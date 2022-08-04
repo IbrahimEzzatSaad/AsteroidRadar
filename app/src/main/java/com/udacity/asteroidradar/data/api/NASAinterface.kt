@@ -1,13 +1,11 @@
-package com.udacity.asteroidradar.api
+package com.udacity.asteroidradar.data.api
 
-import com.udacity.asteroidradar.Constants
-import com.udacity.asteroidradar.Constants.API_KEY
+import com.udacity.asteroidradar.utils.Constants.API_KEY
 
-import com.udacity.asteroidradar.Constants.START_DATE
-import com.udacity.asteroidradar.Constants.END_DATE
-import com.udacity.asteroidradar.Constants.KEY
-import com.udacity.asteroidradar.domain.PictureOfDay
-import kotlinx.coroutines.Deferred
+import com.udacity.asteroidradar.utils.Constants.START_DATE
+import com.udacity.asteroidradar.utils.Constants.END_DATE
+import com.udacity.asteroidradar.utils.Constants.KEY
+import com.udacity.asteroidradar.model.PictureOfDay
 import retrofit2.http.GET
 import retrofit2.http.Query
 

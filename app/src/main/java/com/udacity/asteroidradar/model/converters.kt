@@ -1,9 +1,7 @@
 package com.udacity.asteroidradar.model
 
-import com.udacity.asteroidradar.db.AsteroidTable
-import com.udacity.asteroidradar.db.DayAsteroidTable
-import com.udacity.asteroidradar.domain.Asteroid
-import com.udacity.asteroidradar.domain.PictureOfDay
+import com.udacity.asteroidradar.data.db.AsteroidTable
+import com.udacity.asteroidradar.data.db.DayAsteroidTable
 
 fun ArrayList<Asteroid>.asDatabaseModel(): Array<AsteroidTable> {
     return map {
@@ -36,7 +34,7 @@ fun List<AsteroidTable>.asDomainModel() : List<Asteroid>{
 
 
 
-fun PictureOfDay.asDatabaseModel() : DayAsteroidTable{
+fun PictureOfDay.asDatabaseModel() : DayAsteroidTable {
     return DayAsteroidTable(0,this.mediaType,this.title,this.url)
 }
 
