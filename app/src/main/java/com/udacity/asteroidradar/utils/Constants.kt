@@ -1,5 +1,7 @@
 package com.udacity.asteroidradar.utils
 
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 object Constants {
@@ -10,5 +12,7 @@ object Constants {
     const val API_KEY = "api_key"
     const val START_DATE = "start_date"
     const val END_DATE = "end_date"
+    const val WORK_NAME = "FetchDataWorker"
+
 
 }

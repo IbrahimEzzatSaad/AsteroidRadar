@@ -3,14 +3,28 @@ package com.udacity.asteroidradar.utils
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.squareup.picasso.Picasso
 import com.udacity.asteroidradar.R
+import com.udacity.asteroidradar.model.PictureOfDay
+
+
+@BindingAdapter("imageDay")
+fun bindImageOfDay(imageView: ImageView, Picture: PictureOfDay?) {
+    imageView.contentDescription = R.string.this_is_nasa_s_picture_of_day_showing_nothing_yet.toString()
+    Picture?.let { Picasso.get().load(Picture.url).into(imageView)
+        imageView.contentDescription = String.format(R.string.nasa_picture_of_day_content_description_format.toString(), Picture.title)
+    }
+
+}
 
 
 @BindingAdapter("statusIcon")
 fun bindAsteroidStatusImage(imageView: ImageView, isHazardous: Boolean) {
     if (isHazardous) {
+        imageView.contentDescription = "Its a Hazardous"
         imageView.setImageResource(R.drawable.ic_status_potentially_hazardous)
     } else {
+        imageView.contentDescription = "Its not a Hazardous"
         imageView.setImageResource(R.drawable.ic_status_normal)
     }
 }
@@ -18,8 +32,10 @@ fun bindAsteroidStatusImage(imageView: ImageView, isHazardous: Boolean) {
 @BindingAdapter("asteroidStatusImage")
 fun bindDetailsStatusImage(imageView: ImageView, isHazardous: Boolean) {
     if (isHazardous) {
+        imageView.contentDescription = "Its a Hazardous"
         imageView.setImageResource(R.drawable.asteroid_hazardous)
     } else {
+        imageView.contentDescription = "Its not a Hazardous"
         imageView.setImageResource(R.drawable.asteroid_safe)
     }
 }
